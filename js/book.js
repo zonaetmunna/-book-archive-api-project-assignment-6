@@ -1,3 +1,7 @@
+
+const errorDiv = document.getElementById("error");
+
+
 // onclick searchBook()
 const searchBook = () => {
      const searchInput = document.getElementById("searchInput");
@@ -17,13 +21,25 @@ const searchBook = () => {
      const url = `http://openlibrary.org/search.json?q=${searchText}`;
      fetch(url)
           .then(res => res.json())
-          .then(data => displaySearchBook(data.docs))
+          .then(data => displaySearchBook(data))
 }
 
-const displaySearchBook = books => {
-     // console.log(books);
-     const bookContainer = document.getElementById("bookContainer");
+const displaySearchBook = data => {
+     console.log(data);
+     // data find check
+     if (data.numFound === 0) {
 
+          errorDiv.innerHTML = `
+          <h3>No Result Found<h3>
+          `;
+     }
+     else {
+          errorDiv.innerHTML = `
+          <p>Total results  : ${data.numFound}</p>`;
+     }
+
+     const books = data.docs;
+     const bookContainer = document.getElementById("bookContainer");
      bookContainer.innerHTML = '';
 
      books.forEach(book => {
