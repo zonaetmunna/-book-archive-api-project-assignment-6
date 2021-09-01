@@ -25,7 +25,7 @@ const searchBook = () => {
 }
 
 const displaySearchBook = data => {
-     console.log(data);
+     console.log(data.numFound);
      // data find check
      if (data.numFound === 0) {
 
