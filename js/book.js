@@ -17,7 +17,6 @@ const searchBook = () => {
            <p>please typed your book name</p>`;
           //  clear 
           bookContainer.innerHTML = '';
-
      }
      else {
 
@@ -27,7 +26,6 @@ const searchBook = () => {
                .then(res => res.json())
                .then(data => displaySearchBook(data))
      }
-
 
 }
 
