@@ -8,12 +8,13 @@ const searchBook = () => {
 
      const searchText = searchInput.value;
      // clear search input
+     searchInput.value = '';
 
      // empty input field condition
      if (searchText === '') {
           errorDiv.innerHTML = `
            <h4 class="text-center">Something went wrong</h2>`;
-          searchInput.value = '';
+
           return;
 
      }
@@ -55,7 +56,7 @@ const displaySearchBook = data => {
                <div class="card h-100 border border-2 border-light p-2 bg-light rounded shadow-lg">
                     <img height="300" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top rounded " alt="...">
                     <div class="card-body">
-                         <h5 class="card-title fw-bolder"> ${book.text[1]}:${book.text[2]}</h5>
+                         <h5 class="card-title fw-bolder"> ${book.title}</h5>
                          <p class="card-text">Author : ${book.author_name[0]}</p>
                           <p class="card-text">Publish Year : ${book.first_publish_year}</p>
                           <p class="card-text">Publisher : ${book.publisher[0]}</p>
