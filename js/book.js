@@ -13,9 +13,10 @@ const searchBook = () => {
      // empty input field condition
      if (searchText === '') {
           errorDiv.innerHTML = `
-           <h4 class="text-center">Something went wrong</h2>`;
-
-          return;
+           <h5 class="text-center text-danger">Something went wrong </h5>
+           <p>please typed your book name</p>`;
+          //  clear 
+          bookContainer.innerHTML = '';
 
      }
      else {
@@ -36,24 +37,22 @@ const displaySearchBook = data => {
      // console.log(books);
      // data find check
      if (data.numFound === 0) {
-          errorDiv.innerHTML = `<h3>No Result Found<h3>`;
-
+          errorDiv.innerHTML = `<h4 class="text-danger">No Result Found<h4>`;
      }
      else {
-          errorDiv.innerHTML = `<p>Total results  : ${data.numFound}</p>`;
+          errorDiv.innerHTML = `<p class="text-primary">Total results  : ${data.numFound}</p>`;
      }
 
      // clear search resul
      bookContainer.innerHTML = '';
 
      books.forEach(book => {
-
-          console.log(book);
+          // console.log(book);
           const div = document.createElement("div");
           div.classList.add("col");
           div.innerHTML = `
           
-               <div class="card h-100 border border-2 border-light p-2 bg-light rounded shadow-lg">
+               <div class="card h-100 border border-3 border-light p-2 bg-light rounded shadow-lg">
                     <img height="300" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top rounded " alt="...">
                     <div class="card-body">
                          <h5 class="card-title fw-bolder"> ${book.title}</h5>

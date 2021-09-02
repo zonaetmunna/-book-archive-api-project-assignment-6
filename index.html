@@ -16,13 +16,14 @@
 
      <!--search field -->
      <section>
+          <h3 class="text-center m-3">Search your favourite books</h3>
+          <div class="input-group m-3 w-75 mx-auto  ">
 
-          <div class="input-group m-3 w-75 mx-auto ">
+               <input id="searchInput" type="text" class="form-control me-3 border border-3  "
+                    placeholder="enter Your Book name" aria-label="Recipient's username"
+                    aria-describedby="button-addon2">
 
-               <input id="searchInput" type="text" class="form-control me-3 border border-4  "
-                    placeholder="search Your Book" aria-label="Recipient's username" aria-describedby="button-addon2">
-
-               <button onclick="searchBook()" class="btn btn-outline-secondary border border-4" type="button"
+               <button onclick="searchBook()" class="btn btn-outline-secondary border border-3" type="button"
                     id="button-addon2">Search</button>
 
           </div>
@@ -30,8 +31,7 @@
      </section>
 
      <!-- error -->
-     <div id="error" class="text-center fw-bold ">
-
+     <div id="error" class="text-center text-black fw-bold ">
      </div>
 
 
@@ -40,11 +40,10 @@
           <div id="bookContainer" class="row row-cols-1 row-cols-md-3 g-4">
 
           </div>
-
      </section>
 
 
-
+     <!-- javaScript link -->
      <script src="js/book.js"></script>
 </body>
 
